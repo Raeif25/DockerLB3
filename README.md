@@ -322,7 +322,7 @@ services:
 
 
 ## Wichtige Docker Befehle
-Shell
+```Shell
 docker build -t name . # Image mithilfe des Dockerfiles im Verzeichnis erstellen
 docker run -p 4000:80 name           # "name"-Image starten mit Port 4000 als 80
 docker run -d -p 4000:80 name                 # das Gleiche bloss im Hintergrund
@@ -335,7 +335,7 @@ docker container rm $(docker container ls -a -q)        # alle Container lösche
 docker image ls -a                      # Liste alles Images auf dieser Maschine
 docker image rm <image id>                                   # ein Image löschen
 docker image rm $(docker image ls -a -q)                   # Alle Images löschen
-
+```
 
 ## Testen
 ### Webserver
