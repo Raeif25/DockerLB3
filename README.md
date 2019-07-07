@@ -1,9 +1,9 @@
-M300 - LB3 Dokumentation Raeif Al Habash 
+M300 - LB3 Dokumentation Raeif Al-Habash 
 ===
 Die nachstehende Dokumentation zeigt alle Schritte auf, die ich während der LB3 gemacht habe.
 
 ## Inhaltsverzeichnis
-- [M300 - LB3 Dokumentation Raeif Al Habash](#m300---lb3-dokumentation-Raeif-Al-Habash)
+- [M300 - LB3 Dokumentation Raeif Al-Habash](#m300---lb3-dokumentation-raeif-al-habash)
   - [Inhaltsverzeichnis](#inhaltsverzeichnis)
 - [K1](#k1)
   - [VirtualBox](#virtualbox)
@@ -68,23 +68,23 @@ Nun ist die VM erstellt.
 *Danach habe ich in der Bash folgende Befehle ausgeführt.*
 
 1. Paketliste neu einlesen und Pakete aktualisieren:
-   Shell 
+   ```Shell 
    $  sudo apt-get update   #Paketlisten des Paketmanagement-Systems "APT" neu einlesen
    
    $  sudo apt-get update   #Installierte Pakete wenn möglich auf verbesserte Versionen aktualisieren
 
    $  sudo reboot           #System-Neustart durchführen
-   
+   ```
 2. Software Controlcenter "Synaptic" installieren:
-   Shell 
+   ```Shell 
    $  sudo apt-get install synaptic
-   
+   ```
 3. Nach erfolgreicher Installation in der Suche nach "Synaptic Package Manager" suchen und diesen starten
 4. Innerhalb des Managers nach "apache" (Webserver-Programm) suchen und dieses (inkl. aller Abhängigkeiten) installieren
 5. System-Neustart durchführen:
-   Shell 
+   ```Shell 
    $  sudo reboot
-   
+   ```
 6. Danach habe geprüft, ob der Standard-Content des Webservers unter "http://127.0.0.01:80" erreichbar ist
 
 
@@ -96,40 +96,40 @@ Zuerst habe ich Vagrant auf [dieser Webseite](https://www.vagrantup.com/ "vagran
 *Danach habe ich mit Vagrant eine VM erstellt.*
 1. Terminal öffnen
 2. Einen neuen Ordner für die VM anlegen:
-    Shell
-      $ cd C:\Users\Arun Shanmuganathan
+    ```Shell
+      $ cd C:\Users\raeifalhabash
       $ mkdir MeineVagrantVM
       $ cd MeineVagrantVM
-     
+     ```
 3. Vagrantfile erzeugen, VM erstellen und starten:
-    Shell
+    ```Shell
       $ vagrant box add http://10.1.66.11/vagrant/ubuntu/xenial64.box --name ubuntu/xenial64  #Vagrant-Box vom Netzwerkshare hinzufügen
       $ vagrant init ubuntu/xenial64        #Vagrantfile erzeugen
       $ vagrant up --provider virtualbox    #Virtuelle Maschine erstellen & starten
-     
+     ```
 4. Die VM ist nun bereit und kann mit SSH-Zugriff bedient werden:
-    Shell
-      $ cd C:\Users\Arun Shanmuganathan\M300\eigene umgebung\     #Zum Verzeichnis der VM wechseln
+    ```Shell
+      $ cd C:\Users\raeifalhabash\M300\eigene umgebung\     #Zum Verzeichnis der VM wechseln
       $ vagrant ssh                       #SSH-Verbindung zur VM aufbauen
-     
+     ```
 
 *Nachfolgend habe ich eine VM mit Apache Webserver von einem bereits abgeänderten File erstellt:*
 
 1. Terminal öffnen
 2. In das M300-Verzeichnis wechseln:
-    Shell
-      $ cd C:\Users\Arun Shanmuganathan\M300\eigene umgebung\virtual boxen
-     
+    ```Shell
+      $ cd C:\Users\Raeifalhabash\M300\eigene umgebung\virtual boxen
+     ```
 3. VM erstellen und starten:
-    Shell
+    ```Shell
       $ vagrant up
-     
+     ```
 4. Danach habe ich im Webbrowser geprüft, ob der Standard-Content des Webservers unter "http://127.0.0.01:8080" (localhost) erreichbar ist
 5. Später habe ich im Ordner `\web` die Hauptseite `index.html` editiert und das Resultat überprüft.
 6. Abschliessend habe ich die VM wieder gelöscht:
-    Shell
+    ```Shell
       $ vagrant destroy -f
-    
+    ```
 
 ## Visual Studio Code
 > [⇧ *Nach oben*](#inhaltsverzeichnis)
@@ -169,29 +169,29 @@ Ich habe Client-Installation auf [dieser](https://git-scm.com/downloads) Seite h
 *Danach habe ich den Client konfiguriert:*
 1. Terminal öffnen
 2. Git konfigurieren mit Informationen des GitHub-Accounts:
-    Shell
+    ```Shell
       $ git config --global user.name "<username>"
       $ git config --global user.email "<e-mail>"
-     
+     ```
 
 *Damit ich das readme-File lokal bearbeiten kann, habe ich das Repository heruntergeladen und aktualisiert.*
 
 1. Terminal öffnen
 2. Ordner für Repository erstellen:
-    Shell
+    ```Shell
       $ cd C:\Users\ArunShanmuganathan\Desktop
       $ mkdir githublb2
-     
+     ```
 3. Repository mit SSH klonen:
-    Shell
+    ```Shell
       $ git clone git@github.com:arunshan12/lb2.git
-
+```
       Cloning into 'lb2'...
      
 4. Repository aktualisieren und Status anzeigen:
-    Shell
+    ```Shell
       $ git pull
-
+```
       Already up to date.
     
 
@@ -201,22 +201,22 @@ Ich habe Client-Installation auf [dieser](https://git-scm.com/downloads) Seite h
 *Zuerst musste ich Lokal einen SSH-Key erstellen:*
 
 1.  Folgenden Befehl mit der Account-E-Mail von GitHub in Bash einfügen:
-    Shell
+    ```Shell
       $  ssh-keygen -t rsa -b 4096 -C "arun.shanmuganathan@edu.tbz.ch"
-    
+    ```
 2. Neuer SSH-Key wird erstellt:
-    Shell
+    ```Shell
       Generating public/private rsa key pair.
-    
+    ```
 3. Bei der Abfrage, unter welchem Namen der Schlüssel gespeichert werden soll, die Enter-Taste drücken (für Standard):
-    Shell
+    ```Shell
       Enter a file in which to save the key (~/.ssh/id_rsa): [Press enter]
-    
+    ```
 4. Nun habe ich ein Passwort für den Key festgelegt:
-    Shell
+    ```Shell
       Enter passphrase (empty for no passphrase): [Passwort]
       Enter same passphrase again: [Passwort wiederholen]
-    
+    ```
 *Danach kann ich den SSH-Key dem Client hinzufügen:*
 1. Auf www.github.com im Benutzerkonto *Settings* aufrufen
 2.  Unter den Menübereichen auf der linken Seite zum Abschnitt *SSH und GPG keys* wechseln
@@ -231,7 +231,7 @@ shell
 vagrant ssh
 
 
-_
+
 K2
 ======
 Ich habe die ersten zwei K (K1-K2) aus der alten Dokumentation übernommen. Da das zu dokumentierende gleich ist.
@@ -245,13 +245,100 @@ Ich habe die ersten zwei K (K1-K2) aus der alten Dokumentation übernommen. Da d
 3. Username, E-mail und Passwort eingeben sowie Aufgabe zum verifizieren lösen
 4. Auf *Create an Account* klicken
 
+## Git-Client
+Der Git-Client habe ich auf meinem PC installiert und verwendet.
+
+
+
+## Markdown
+| Name: Reverse Proxy                        	|   	|
+|--------------------------------------------	|---	|
+| Container Name: reverse-proxy01            	|   	|
+| Image: traefik:1.7                         	|   	|
+| ports: 80:80, 443:443 8000:8000, 8080:8080 	|   	|
+| resources: cpu: 0.5, memory: 512M          	|   	
+
+## Markdown Editor
+Als MArkdown Editor habe ich https://www.tablesgenerator.com/markdown_tables vewendet.
+
 ## Persönlicher Wissensstand
 
-Ich habe noch nie etwas von Docker und Containern gehört. Ich habe während dem Modul erfahren, dass in meiner Firma auch mit Containern gearbeitet werden. Ich bin aber noch nie mit Containern in berührung gekommen. 
+Von Docker habe ich im Verlauf des Jahres immer mehr gehört, aber nie aktiv damit gearbeitet. In userem Betieb wird die Containerisierung vereinzelt eingesetzt. Micoservices sind mir schon aus Schul-Modulen bekannt.
 
-## Wichtige Lernschritte
+## Netzwerkplan (Markdown)
 
-Ich habe eigentlich alles was in der Dokumentation dokumentiert wurde neu kennengelernt. Darum war jeder Lernschritt ein neuer und guter.
+```
++--------------------------------------------------------------------------------------------------------------------------+
+| Database WordPress                                                      | WordPress                                      |
+| Name: database_wordpress                                                       | Name: wordpress                                |
+| Image: mysql:5.7                                                        | Image: wordpress:5.2                           |
+| Ports:                                                                  | Environment:                                   |
+| =>3306:3306                                                             | =>WORDPRESS_DB_HOSt: db_wp:3306                |
+| Volumes:                                                                | =>WORDPRESS_DB_USER: wordpress                 |
+| =>./db_data_wordpress:/var/lib/mysql                                    | =>WORDPRESS_DB_PASSWORD: wordpress             |
+| Environment:                                                            | =>WORDPRESS_DB_NAME: wordpress                 |
+| =>MYSQL_ROOT_PASSWORD: somewordpress                                    | Networks:                                      |
+| =>MYSQL_DATABASE: wordpress                                             | =>internal                                     |
+| =>MYSQL_USER: wordpress                                                 | =>proxy                                        |
+| =>MYSQL_PASSWORD: wordpress                                             | Labels:                                        |
+| Networks:                                                               | =>traefik.backend=wordpress                    |
+| =>internal                                                              | =>traefik.enable=true                          |
+| Labels:                                                                 | =>traefik.frontend.rule=Host:wordpress.test.ch |
+| =>traefik.enable=false                                                  | =>traefik.port=80                              |
+|                                                                         | =>traefik.docker.network=proxy                 |
++-------------------------------------------------------------------------+------------------------------------------------+
+| Reverse Proxy                                                           | Database Owncloud                              |
+| Name: reverse-proxy                                                     | Name: database_owncloud                        |
+| Image: traefik:1.7                                                      | Image: mysql:5.7                               |
+| Ports:                                                                  | Ports:                                         |
+| =>80:80                                                                 | =>3307:3306                                    |
+| =>8080:8080                                                             | Volumes:                                       |
+| =>8000:8000                                                             | =>./db_data_owncloud:/var/lib/mysql            |
+| =>443:443                                                               | Environment:                                   |
+| Volumes:                                                                | =>MYSQL_ROOT_PASSWORD: someowncloud            |
+| =>/var/run/docker.sock:/var/run/docker.sock                             | =>MYSQL_DATABASE: owncloud                     |
+| =>./traefik:/etc/traefik                                                | =>MYSQL_USER: owncloud                         |
+| =>./traefik/Certs:/vagrant/M300-Services/LB3/Dockerconfig/traefik/Certs | =>MYSQL_PASSWORD: owncloud                     |
+| Networks:                                                               | Networks:                                      |
+| =>proxy                                                                 | =>internal                                     |
+|                                                                         | Labels:                                        |
+|                                                                         | =>traefik.enable=false                         |
++-------------------------------------------------------------------------+------------------------------------------------+
+| Owncloud                                                                | Cadvisor                                       |
+| Name: owncloud                                                          | Name: cadvisor                                 |
+| Image: owncloud:10.0                                                    | Volumes:                                       |
+| Volumes:                                                                | =>/:/rootfs:ro                                 |
+| =>./owncloud:/mnt/data                                                  | =>/var/run:/var/run:rw                         |
+| Environment:                                                            | =>/sys:/sys:ro                                 |
+| =>OWNCLOUD_DB_TYPE=mysql                                                | =>/var/lib/docker/:/var/lib/docker:ro          |
+| =>OWNCLOUD_DB_NAME=owncloud                                             | Networks:                                      |
+| =>OWNCLOUD_DB_USERNAME=owncloud                                         | =>internal                                     |
+| =>OWNCLOUD_DB_PASSWORD=owncloud                                         | Labels:                                        |
+| =>OWNCLOUD_DB_HOST=db_owncloud:3307                                     | =>traefik.enable=false                         |
+| =>OWNCLOUD_ADMIN_USERNAME=owncloud                                      |                                                |
+| =>OWNCLOUD_ADMIN_PASSWORD=owncloud                                      |                                                |
+| Networks:                                                               |                                                |
+| =>internal                                                              |                                                |
+| =>proxy                                                                 |                                                |
+| Labels:                                                                 |                                                |
+| =>traefik.backend=owncloud                                              |                                                |
+| =>traefik.enable=true                                                   |                                                |
+| =>traefik.frontend.rule=Host:owncloud.test.ch                           |                                                |
+| =>traefk.port=8000                                                      |                                                |
+| =>traefik.docker.network=proxy                                          |                                                |
++-------------------------------------------------------------------------+------------------------------------------------+
+| Active Notification                                                     |                                                |
+| Name: active-notification                                               |                                                |
+| Image: quaide/dem:latest                                                |                                                |
+| Volumes:                                                                |                                                |
+| =>/var/run/docker.sock:/var/run/docker.sock                             |                                                |
+| =>./active-notification/conf.yml:/app/conf.yml                          |                                                |
+| Networks:                                                               |                                                |
+| =>internal                                                              |                                                |
+| Labels:                                                                 |                                                |
+| =>traefik.enable=false                                                  |                                                |
++-------------------------------------------------------------------------+------------------------------------------------+
+```
 
 K3
 ======
@@ -264,15 +351,15 @@ K3
 3. Die lokale Installation erfolgt dann GUI-basiert.
 
 Ich habe in meinem erstellten Ordner ein Dockerfile erstellt und folgendes eingetragen: 
-Shell
+```Shell
 FROM php:7.1-apache
 
 RUN docker-php-ext-install mysqli
-
+```
 
 Danach habe ich ein Compose File erstellt:
-Shell
-version: '2.2'
+```Shell
+version: '3.3'
 
 services:
 
@@ -286,8 +373,8 @@ services:
 # Hier wird angegeben, wo das Indexfile für den Webserver ist. Angabe der Volumes wird das Index-File fortlaufend synchronisiert.
     volumes:
       - ./php/www:/var/www/html
-    cpus: 1
-    mem_limit: 1024m
+    cpus: 0.5
+    mem_limit: 512m
 
 # Hier wird der grafische Zugang zum MySQL Server konfiguriert.
   phpmyadmin:
@@ -318,11 +405,204 @@ services:
      - MYSQL_DATABASE=database
     cpus: 1
     mem_limit: 1024m
+     db_owncloud:
+  container_name: database_owncloud
+  image: mysql:5.7
+  volumes:
+   - ./db_data_owncloud:/var/lib/mysql
+  restart: on-failure
+  environment:
+   MYSQL_ROOT_PASSWORD: someowncloud
+   MYSQL_DATABASE: owncloud
+   MYSQL_USER: owncloud
+   MYSQL_PASSWORD: owncloud
+  networks:
+   - internal
+  labels:
+   - "traefik.enable=false"
+  ports:
+   - "3307:3306"
+  deploy:
+   resources:
+    limits:
+     cpus: "0.5"
+     memory: 512M
+ 
+ db_owncloud:
+  container_name: database_owncloud
+  image: mysql:5.7
+  volumes:
+   - ./db_data_owncloud:/var/lib/mysql
+  restart: on-failure
+  environment:
+   MYSQL_ROOT_PASSWORD: someowncloud
+   MYSQL_DATABASE: owncloud
+   MYSQL_USER: owncloud
+   MYSQL_PASSWORD: owncloud
+  networks:
+   - internal
+  labels:
+   - "traefik.enable=false"
+  ports:
+   - "3307:3306"
+  deploy:
+   resources:
+    limits:
+     cpus: "0.5"
+     memory: 512M
+
+ owncloud:
+  depends_on:
+   - db_owncloud
+  container_name: owncloud
+  image: owncloud:10.0
+  restart: always
+  labels:
+   - "traefik.backend=owncloud"
+   - "traefik.enable=true"
+   - "traefik.frontend.rule=Host:owncloud.abc.ch"
+   - "traefk.port=8000"
+   - "traefik.docker.network=proxy"
+  networks:
+   - internal
+   - proxy
+
+ cadvisor:
+   image: google/cadvisor:latest
+   volumes:
+    - "/:/rootfs:ro"
+    - "/var/run:/var/run:rw"
+    - "/sys:/sys:ro"
+    - "/var/lib/docker/:/var/lib/docker:ro"
+  publish:
+   - "8081:8081"
+  container_name: cadvisor
+
+volumes:
+ db_data: {}
+
+networks:
+ proxy:
+  external: true
+ internal:
+  external: false
+  
+  wordpress_db:
+ db_wordpress:
+  container_name: database_wordpress
+  image: mysql:5.7
+  volumes:
+   - ./db_data_wordpress:/var/lib/mysql
+  restart: on-failure
+  environment:
+   MYSQL_ROOT_PASSWORD: somewordpress
+   MYSQL_DATABASE: wordpress
+   MYSQL_USER: wordpress
+   MYSQL_PASSWORD: wordpress
+  networks:
+   - internal
+  labels:
+   - "traefik.enable=false"
+  ports:
+   - "3306:3306"
+  deploy:
+   resources:
+    limits:
+     cpus: "0.5"
+     memory: 512M
+
+  
+  wordpress:
+  container_name: wordpress
+  depends_on: db_wordpress
+   - db_wp
+  image: wordpress:5.2
+  restart: on-failure
+  environment:
+   WORDPRESS_DB_HOST: db_wp:3306
+   WORDPRESS_DB_USER: wordpress
+   WORDPRESS_DB_PASSWORD: wordpress
+   WORDPRESS_DB_NAME: wordpress
+  labels:
+   - "traefik.backend=wordpress"
+   - "traefik.enable=true"
+   - "traefik.frontend.rule=Host:wordpress.test.ch"
+   - "traefik.port=80"
+   - "traefik.docker.network=proxy"
+  networks:
+   - internal
+   - proxy 
+  deploy:
+   resources:
+    limits:
+     cpus: "0.5"
+     memory: 512M
+
+ reverse-proxy:
+  container_name: reverse-proxy01
+  restart: on-failure
+  image: traefik:1.7
+  command: --api
+  ports:
+   - "80:80"
+   - "8080:8080"
+   - "8000:8000"
+   - "443:443"
+  volumes:
+   - /var/run/docker.sock:/var/run/docker.sock
+   - ./traefik:/etc/traefik
+   - ./traefik/Certs:/vagrant/M300-Services/LB3/Dockerconfig/traefik/Certs
+  networks:
+   - proxy
+  deploy:
+   resources:
+    limits:
+     cpus: "0.5"
+     memory: 512M   
+ 
+ cadvisor:
+  image: google/cadvisor:latest
+  restart: on-failure
+  volumes:
+   - "/:/rootfs:ro"
+   - "/var/run:/var/run:rw"
+   - "/sys:/sys:ro"
+   - "/var/lib/docker/:/var/lib/docker:ro"
+  ports:
+   - "8081:8080"
+  container_name: cadvisor
+  networks:
+   - internal
+  labels:
+   - "traefik.enable=false"
+  deploy:
+   resources:
+    limits:
+     cpus: "0.5"
+     memory: 512M
+
+ active-notification:
+  container_name: active-notification
+  restart: on-failure
+  image: quaide/dem:latest
+  volumes:
+   - "/var/run/docker.sock:/var/run/docker.sock"
+   - "./active-notification/conf.yml:/app/conf.yml"
+  networks:
+   - internal
+  labels:
+   - "traefik.enable=false"
+  deploy:
+   resources:
+    limits:
+     cpus: "0.5"
+     memory: 512M
 
 
+```
 
 ## Wichtige Docker Befehle
-```Shell
+Shell
 docker build -t name . # Image mithilfe des Dockerfiles im Verzeichnis erstellen
 docker run -p 4000:80 name           # "name"-Image starten mit Port 4000 als 80
 docker run -d -p 4000:80 name                 # das Gleiche bloss im Hintergrund
@@ -335,7 +615,7 @@ docker container rm $(docker container ls -a -q)        # alle Container lösche
 docker image ls -a                      # Liste alles Images auf dieser Maschine
 docker image rm <image id>                                   # ein Image löschen
 docker image rm $(docker image ls -a -q)                   # Alle Images löschen
-```
+
 
 ## Testen
 ### Webserver
@@ -350,6 +630,7 @@ Ich hab localhost:8080 eingegeben und mich mit meinem bestehenden Account eingel
 
 K4
 ======
+genutzt.
 ## 3 Sicherheitsaspekte
 Ich habe folgende drei Sicherheitsaspekte beachtet.
 ### Image Poinoning
@@ -357,12 +638,12 @@ Als erster Aspekt, habe ich nur Images von der offiziellen Seite https://hub.doc
 
 ### Memory Limit
 Ich habe  im Compose File ein Memory Limit gesetzt, damit der Container nicht zu viel Memory braucht.
-Shell
+```Shell
 mem_limit: 1024m
-
+```
 
 ### Überwachung
-Für die grundsätzliche Überwachung der drei Container werden in der Shell die Aktivitäten angezeigt. 
+Für die grundsätzliche Überwachung der Container werden in der Shell die Aktivitäten angezeigt. 
 
 Zur genaueren Überwachung habe ich den PRTG Network Monitor ausgewählt. Damit lässt sich der Container überwachen. 
 
@@ -371,7 +652,7 @@ Zur genaueren Überwachung habe ich den PRTG Network Monitor ausgewählt. Damit 
 2. Auf *Kostenlose Download* klicken
 3. Die lokale Installation erfolgt dann GUI-basiert.
 
-Nachdem die Software heruntergeladen wurde, kann man darauf zugreifen, indem man im Browser *127.0.0.1* eintippt. Oder über die Destop-App.
+Nachdem die Software heruntergeladen wurde, kann man darauf zugreifen, indem man im Browser *127.0.0.1* eintippt. Oder über die Desktop-App.
 
 Ich habe dazu noch zwei Trigger für Benachrichtigungen erstellt:
 * Wenn sich der Sensor ändert, führe E-Mail an alle Mitglieder der Gruppe PRTG Benutzergruppe schicken aus.
