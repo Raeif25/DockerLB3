@@ -15,7 +15,7 @@ Die nachstehende Dokumentation zeigt alle Schritte auf, die ich während der LB3
   - [GitHub Account](#github-account)
   - [Persönlicher Wissensstand](#pers%C3%B6nlicher-wissensstand)
   - [Wichtige Lernschritte](#wichtige-lernschritte)
-  - [Netzwerkplan (Markdown)](#Netzwerkplan (Markdown))
+  - [Netzwerkplan (Markdown)](#Netzwerkplan)
 - [K3](#k3)
   - [Aufbau der Dockerumgebung](#aufbau-der-dockerumgebung)
   - [Wichtige Docker Befehle](#wichtige-docker-befehle)
